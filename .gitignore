@@ -41,3 +41,6 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Local project environment, profile data, local context and agent
+.project/
