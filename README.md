@@ -1,5 +1,8 @@
 # 🎮 Game Glitch Investigator: The Impossible Guesser
 
+[![test](https://github.com/Inventrohyder/ai110-module1show-gameglitchinvestigator-starter/actions/workflows/test.yml/badge.svg)](https://github.com/Inventrohyder/ai110-module1show-gameglitchinvestigator-starter/actions/workflows/test.yml)
+[![trunk-check](https://github.com/Inventrohyder/ai110-module1show-gameglitchinvestigator-starter/actions/workflows/trunk-check.yml/badge.svg)](https://github.com/Inventrohyder/ai110-module1show-gameglitchinvestigator-starter/actions/workflows/trunk-check.yml)
+
 ## 🚨 The Situation
 
 You asked an AI to build a simple "Number Guessing Game" using Streamlit.
