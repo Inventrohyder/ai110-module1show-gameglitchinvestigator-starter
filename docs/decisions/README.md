@@ -8,3 +8,4 @@ This directory contains records of architecture decisions made for this project.
 | ------------------------------------------------- | --------------------------------------------------------------------- | ---------- | -------- |
 | [20260622-use-uv](20260622-use-uv.md)             | [Use uv for Dependency Management](20260622-use-uv.md)                | 2026-06-22 | accepted |
 | [20260622-use-trunk-io](20260622-use-trunk-io.md) | [Use Trunk.io for Linting and Code Quality](20260622-use-trunk-io.md) | 2026-06-22 | accepted |
+| [20260622-ci-pipeline](20260622-ci-pipeline.md)   | [CI Pipeline with GitHub Actions](20260622-ci-pipeline.md)            | 2026-06-22 | accepted |

@@ -1,0 +1,22 @@
+name: trunk-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  trunk_check:
+    name: Trunk Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Trunk Check
+        uses: trunk-io/trunk-action@v1
