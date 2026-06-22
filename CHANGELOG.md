@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Initial scaffolding for project documentation.
 - Migrated project setup to uv.
+- Integrated Trunk.io linter framework (ruff, markdownlint, prettier, actionlint).
 
 ### Changed
 
