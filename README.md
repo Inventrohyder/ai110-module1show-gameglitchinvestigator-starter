@@ -11,8 +11,8 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 🛠️ Setup
 
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run the broken app: `python -m streamlit run app.py`
+1. Install dependencies: `uv sync`
+2. Run the broken app: `uv run streamlit run app.py`
 
 ## 🕵️‍♂️ Your Mission
 

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial scaffolding for project documentation.
+- Migrated project setup to uv.
 
 ### Changed
 
