@@ -19,7 +19,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 🧪 Testing
 
-This project uses `pytest` and `pytest-bdd` to run behavioral tests defined in Gherkin syntax.
+This project uses `pytest` and `pytest-bdd` to run behavioral tests defined in Gherkin syntax, as well as Streamlit `AppTest` to run automated UI simulation tests.
 
 To run the test suite:
 
