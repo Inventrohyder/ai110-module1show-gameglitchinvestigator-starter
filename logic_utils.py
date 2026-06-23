@@ -38,21 +38,21 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    if guess == secret:
+    # #FIX: Refactored logic into logic_utils.py using agent mode, ensuring type safety and correct hint direction
+    try:
+        g_val = int(guess)
+        s_val = int(secret)
+    except (ValueError, TypeError):
+        g_val = str(guess)
+        s_val = str(secret)
+
+    if g_val == s_val:
         return "Win", "🎉 Correct!"
 
-    try:
-        if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
-        else:
-            return "Too Low", "📉 Go LOWER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
+    if g_val > s_val:
+        return "Too High", "📉 Go LOWER!"
+    else:
+        return "Too Low", "📈 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):

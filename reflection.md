@@ -29,11 +29,11 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
-  I used the Antigravity IDE agent (powered by Gemini) and its specialized browser subagents to automate testing the game, taking screenshots, and recording WebP files of each glitch. This allowed me to catalog the behavior of all 8 bugs methodically.
+  I used the Antigravity IDE agent (powered by Gemini) and its specialized browser subagents to automate testing the game and capturing recordings of each glitch. Later, I used the same platform to coordinate my implementation planning, test generation, and refactoring tasks.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-  The AI suggested setting up a dedicated `.project/` configuration directory to keep browser driver profiles and runtime configs out of the root project directory. I verified this by running git status locally and confirming that all temporary test automation assets remained completely ignored.
+  The AI suggested using Streamlit's `AppTest` framework for simulating the UI instead of manually mocking internal dictionaries in tests. It also correctly suggested setting up a dedicated `.project/` directory to isolate local configuration assets. I verified both suggestions by successfully running automated tests with `pytest` and checking that `git status` remained clean.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
-  The AI initially suggested that I run complex manual terminal commands to configure Chrome driver binaries, but I verified that I could use high-level browser agent calls directly to inspect the page. This saved me from polluting my local environment with manual driver installations.
+  The AI initially suggested a Git branching strategy using a separate `develop` branch and writing temporary branch updates to `CHANGELOG.md`. I corrected it to use trunk-based development on `main` and keep the changelog relative to the base branch. It also suggested manual setup of browser driver binaries, which I replaced with clean high-level test run calls.
 
 ---
 
@@ -52,6 +52,7 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+  Streamlit is like a flipbook that redraws the entire page from top to bottom every time you click a button or type in an input box. Because it runs the whole script again on every interaction, any normal variables would get reset to their starting values. Session state is like a notepad that Streamlit keeps on the side; it lets us save numbers, scores, and status across these reruns so the app remembers what happened in previous steps.
 
 ---
 
@@ -59,5 +60,8 @@ Document at least 3 bugs you found. Add rows as needed.
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+    I want to reuse the Graphite stacked PR workflow and on-demand documentation updates. Addressing PR feedback and logging AI interactions immediately inside the correct branch layer keeps the development stack extremely clean and organized.
 - What is one thing you would do differently next time you work with AI on a coding task?
+  Next time, I will configure linter rules and CI pipelines before starting any feature or bug fix branch. This prevents formatting/style issues from cluttering downstream commits and avoids having to fix checks later in the stack.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  This project showed me that AI-generated code is highly effective for bootstrapping and automation, but requires structured guardrails and careful human review to ensure architectural alignment. Treat the AI as an active pair programmer rather than a black-box generator.
