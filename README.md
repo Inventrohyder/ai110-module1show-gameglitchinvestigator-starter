@@ -17,6 +17,16 @@ It wrote the code, ran away, and now the game is unplayable.
 1. Install dependencies: `uv sync`
 2. Run the broken app: `uv run streamlit run app.py`
 
+## 🧪 Testing
+
+This project uses `pytest` and `pytest-bdd` to run behavioral tests defined in Gherkin syntax.
+
+To run the test suite:
+
+```sh
+uv run pytest
+```
+
 ## 🕵️‍♂️ Your Mission
 
 1. **Play the game.** Open the "Developer Debug Info" tab in the app to see the secret number. Try to win.
