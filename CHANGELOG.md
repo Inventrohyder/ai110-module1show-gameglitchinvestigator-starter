@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Migrated project setup to uv.
 - Integrated Trunk.io linter framework (ruff, markdownlint, prettier, actionlint).
 - Configured CI workflows on GitHub Actions for pytest and trunk check.
+- Recorded and documented all 8 core game glitches with clean screen recordings.
+- Updated `reflection.md` to link all identified glitches to their corresponding GitHub issues and recording files.
 
 ### Changed
 
