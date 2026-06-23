@@ -40,9 +40,12 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+  I decided a bug was fixed when the corresponding pytest-bdd Gherkin scenario passed, the Streamlit AppTest simulation test succeeded without errors, and manual visual validation in the browser confirmed correct behavior.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+  I ran `uv run pytest` to execute the Gherkin feature tests. It showed me that the initial `check_guess` implementation returned a tuple but existing tests asserted on a string outcome, causing type mismatches.
 - Did AI help you design or understand any tests? How?
+  Yes, the AI helped scaffold the pytest-bdd step definitions and the Streamlit AppTest simulation structure, which allowed me to run automated UI tests without starting a full browser on every code change.
 
 ---
 

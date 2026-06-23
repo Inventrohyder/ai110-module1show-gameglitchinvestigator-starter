@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Refactored game logic helper functions from app.py to logic_utils.py.
+
 ### Fixed
 
 ### Removed
