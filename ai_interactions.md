@@ -26,11 +26,9 @@
 
 > Document how you used AI to help generate or improve tests.
 
-| Edge Case | Prompt Used | AI-Suggested Test | Did It Pass? | Your Reasoning |
-| --------- | ----------- | ----------------- | ------------ | -------------- |
-|           |             |                   |              |                |
-|           |             |                   |              |                |
-|           |             |                   |              |                |
+| Edge Case               | Prompt Used                                                                                                                                                                                                                                      | AI-Suggested Test                                                    | Did It Pass?                            | Your Reasoning                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------- |
+| Inverted hint direction | `"Full formal pytest-bdd + AppTest + Graphite stacks for test infrastructure — Set up the testing framework as its own stacked PR chain: (1) add pytest-bdd dep, (2) create features/ directory structure, (3) create hint_messages.feature..."` | Pytest-bdd feature scenario with step assertions comparing outcomes. | No (initially failed/xfail due to bugs) | Verified that hints evaluation can be structured via Gherkin before repairing bugs. |
 
 ---
 
