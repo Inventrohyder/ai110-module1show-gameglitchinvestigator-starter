@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Recorded and documented all 8 core game glitches with clean screen recordings.
 - Updated `reflection.md` to link all identified glitches to their corresponding GitHub issues and recording files.
 - Configured pytest-bdd Gherkin-based behavioral testing dependency.
+- Integrated an interactive performance historical line chart (`st.sidebar.line_chart`) to visualize accuracy improvements across turns (Challenge 2).
 
 ### Changed
 

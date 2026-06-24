@@ -111,6 +111,16 @@ if "status" not in st.session_state:
 if "history" not in st.session_state:
     st.session_state.history = []
 
+# STRETCH FEATURE: Initialize distance tracking for the sidebar line chart
+if "distances" not in st.session_state:
+    st.session_state.distances = []
+
+# STRETCH FEATURE: Render guess distance line chart in the sidebar if data exists
+if st.session_state.distances:
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("📉 Distance History")
+    st.sidebar.line_chart(st.session_state.distances)
+
 st.subheader("Make a guess")
 
 st.info(
@@ -138,6 +148,7 @@ with col3:
 if new_game:
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)  # nosec B311
+    st.session_state.distances = []
     st.success("New game started.")
     st.rerun()
 
@@ -158,6 +169,10 @@ if submit:
         st.error(err)
     else:
         st.session_state.history.append(guess_int)
+
+        # STRETCH FEATURE: Calculate and append absolute distance from target secret
+        current_distance = abs(guess_int - st.session_state.secret)
+        st.session_state.distances.append(current_distance)
 
         # FIX: Removed str() casting on even attempts.
         # AI and I collaborated via BDD testing to discover that alphabetical sorting
