@@ -35,6 +35,9 @@ def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
 
+    # FIX: returned the correct hint message instead of the swapped hinted message
+    # AI and I collaborated via BDD testing to discover that the original app was returning
+    # the wrong hint message. It was always swapped.
     try:
         if guess > secret:
             return "Too High", "📉 Go LOWER!"
