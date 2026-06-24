@@ -9,7 +9,8 @@ def get_range_for_difficulty(difficulty: str):
     if difficulty == "Normal":
         return 1, 100
     if difficulty == "Hard":
-        return 1, 50
+        # FIX: Widened the Hard difficulty range to 1-150 to increase the challenge level properly.
+        return 1, 150
     return 1, 100
 
 
