@@ -1,11 +1,4 @@
-# import pytest
 from pytest_bdd import given, parsers, scenario, then, when
-from streamlit.testing.v1 import AppTest
-
-# # Statically mark the scenario as expected failure during the Red phase
-# pytestmark = pytest.mark.xfail(
-#     reason="Bug 2: Type-juggling on even attempts causes alphabetical comparison"
-# )
 
 
 @scenario(
@@ -18,9 +11,8 @@ def test_incorrect_hint_due_to_type_juggling_on_first_guess():
 
 @given(parsers.parse('the game difficulty is configured to "{difficulty}"'))
 def set_difficulty(app_test, difficulty):
-    at = AppTest.from_file("app.py")
-    at.run()
-    return at
+    # Target the selectbox in the sidebar and change its value
+    app_test.sidebar.selectbox[0].select(difficulty).run()
 
 
 @given(parsers.parse("the secret number is set to {secret_num:d}"))
