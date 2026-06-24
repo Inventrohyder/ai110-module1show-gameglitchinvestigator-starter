@@ -35,6 +35,12 @@ Document at least 3 bugs you found. Add rows as needed.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
   The AI initially suggested that I run complex manual terminal commands to configure Chrome driver binaries, but I verified that I could use high-level browser agent calls directly to inspect the page. This saved me from polluting my local environment with manual driver installations.
 
+**Example 2:**
+
+> **What the AI suggested**: Initially, when reproducing the "Type Juggling" bug, the AI and my manual plan assumed testing a guess of 5 against a secret of 50 would expose the bug.
+> **Why it was misleading**: The AI failed to account for Python's lexicographical string sorting. Because '5' is evaluated as smaller than '50' alphabetically, the buggy code accidentally returned the correct "Too Low" hint, masking the bug.
+> **How I verified it**: I wrote an automated pytest-bdd test for guess 5, and the test unexpectedly passed. I collaborated with the AI to understand the string logic, then changed the test to guess 6 against 50 (since '6' > '50' alphabetically). The test correctly failed, exposing the bug.
+
 ---
 
 ## 3. Debugging and testing your fixes
@@ -43,6 +49,8 @@ Document at least 3 bugs you found. Add rows as needed.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
+
+**Bug 2 (Type Juggling)**: I verified this fix using Test-Driven Verification. I created a pytest-bdd scenario (type_juggling.feature) that asserted a guess of 6 against a secret of 50 should return "Too Low". I marked it with @pytest.mark.xfail (Red phase). Once I removed the string casting in app.py, I removed the xfail marker and ran uv run pytest, confirming the test passed (Green phase).
 
 ---
 
