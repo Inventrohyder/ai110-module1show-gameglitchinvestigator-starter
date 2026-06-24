@@ -27,10 +27,10 @@
 > Document how you used AI to help generate or improve tests.
 
 | Edge Case | Prompt Used | AI-Suggested Test | Did It Pass? | Your Reasoning |
-|-----------|-------------|-------------------|--------------|----------------|
-| | | | | |
-| | | | | |
-| | | | | |
+| --------- | ----------- | ----------------- | ------------ | -------------- |
+|           |             |                   |              |                |
+|           |             |                   |              |                |
+|           |             |                   |              |                |
 
 ---
 
@@ -40,19 +40,50 @@
 
 **Prompt used:**
 
-```
-<!-- Paste the prompt you gave the AI -->
-```
+I directed the AI to set up a comprehensive CI linting workflow using Trunk.io and Ruff, and guided its initialization, file formatting, and stacked branch splitting using the following sequence of prompts:
+
+1. **Initial Linting & CI Request (from comments on initial plan draft):**
+   ```text
+   "Also, I wanted to also setup all appropriate github actions, and checks required for this project, and adding them in the appropriate places and phases of the full plan as part of granular tasks."
+   ```
+2. **Expanding CI Scope & Introducing Trunk.io (in response to AI recommendation):**
+   ```text
+   "Yes, setup github actions that is very thorough, and not limited to, pytest, trunk.io, and others. All broken down as part of the granular tasks required..."
+   ```
+3. **Coordinating Linters under Trunk:**
+   ```text
+   "full full, remember ruff is part of trunk.io right? and many others are also part of trunk.io, no?"
+   ```
+4. **Optimizing PR Stack Order (moving Trunk init to Stack 1, before ADRs):**
+   ```text
+   "trunk init must be higher since it does include markdown and adr format linting, right?"
+   ```
+5. **Validating Trunk's Automatic Analysis:**
+   ```text
+   "I think trunk init does it's own analysis, right?"
+   "I meant trunk init analysis what to add automagically right?"
+   ```
+6. **Enforcing Clean Stack Splits for Formatting Outputs:**
+   ```text
+   "You have so many changes now, make sure to split it appropriately, like the trunk fmt outputs are separate right?"
+   ```
 
 **Linting output before:**
 
-```
-<!-- Paste relevant linter warnings/errors -->
+```text
+app.py:
+  - Line length exceeds 88 characters.
+  - Missing docstrings for files and functions.
+reflection.md:
+  - Spacing issues in markdown tables.
+  - Line breaks formatting inconsistencies.
 ```
 
 **Changes applied:**
 
-<!-- Describe what you changed based on the AI's suggestions -->
+- Initialized trunk and added `ruff`, `prettier`, `markdownlint`, and `actionlint` to `.trunk/trunk.yaml`.
+- Executed `trunk fmt` to auto-correct all markdown table spacings and line-wrap settings.
+- Resolved styling warnings in markdown files.
 
 ---
 
@@ -64,12 +95,12 @@
 
 <!-- Describe what you asked each model to do -->
 
-| | Model A | Model B |
-|-|---------|---------|
-| **Model name** | | |
-| **Response summary** | | |
-| **More Pythonic?** | | |
-| **Clearer explanation?** | | |
+|                          | Model A | Model B |
+| ------------------------ | ------- | ------- |
+| **Model name**           |         |         |
+| **Response summary**     |         |         |
+| **More Pythonic?**       |         |         |
+| **Clearer explanation?** |         |         |
 
 **Which did you prefer and why?**
 
