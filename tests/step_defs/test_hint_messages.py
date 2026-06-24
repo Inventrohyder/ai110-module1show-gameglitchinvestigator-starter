@@ -1,4 +1,3 @@
-import pytest
 from pytest_bdd import given, parsers, scenario, then, when
 
 
@@ -7,13 +6,11 @@ def test_correct_guess_results_in_a_win():
     pass
 
 
-@pytest.mark.xfail(reason="Too high hint has a bug (inverted direction)")
 @scenario("../features/hint_messages.feature", "Guess is too high")
 def test_guess_is_too_high():
     pass
 
 
-@pytest.mark.xfail(reason="Too low hint has a bug (inverted direction)")
 @scenario("../features/hint_messages.feature", "Guess is too low")
 def test_guess_is_too_low():
     pass

@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Swapped inverted hint message emojis and text inside check_guess to guide players in the correct direction (bug [#1](https://github.com/Inventrohyder/ai110-module1show-gameglitchinvestigator-starter/issues/1)).
+
 ### Removed
 
 ### Security
